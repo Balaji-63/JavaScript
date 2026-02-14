@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3</title>
+</head>
+<body>
+
+
+
+    <script>
+
+// SECTION 1 – String & Type Conversion Tasks
+// TASK 1 – Full Name Builder    
+
+let firstName = "Naveen";
+let lastName = "Kumar";
+
+   console.log(firstName+" "+lastName);
+   console.log(`${firstName} ${lastName}`);
+
+let fullName= (firstName +" "+ lastName);
+   
+    console.log(fullName.length);
+
+
+
+// TASK 2 – Predict Type
+// Predict the output type
+
+typeof("5" + 2) //output is "string" because any character type with string will be string
+typeof(5 + "2") //output is "string" same as any character type with string will be string
+typeof(true + 1) //output is "number" because the orginal value of trus is 1 and the second value is also a number 
+typeof(false + "hello") //output is "string" same as any character thats is with string type will be string
+typeof(null + 1) // output is "number" 
+
+
+
+// TASK 3 – Manual Type Conversion
+// Convert using Number():
+
+
+   console.log(Number("100")); //100
+   console.log(Number("10.5")); //10.5
+   console.log(Number("abc")); //NaN
+   console.log(Number(true)); //1
+   console.log((Number(false))); //0
+   console.log((Number(null))); //0
+   console.log((Number(undefined))); //NaN
+
+// For the alphabets and undefined values we are getting the value NaN
+
+
+
+// TASK 4 – Boolean Truthy/Falsy Test
+
+   
+   console.log(Boolean(0)); //false
+   console.log(Boolean(1)); //true
+   console.log(Boolean("")); //false
+   console.log(Boolean("hello")); //true
+   console.log(Boolean(null)); //false
+   console.log(Boolean(undefined)); //false
+   console.log(Boolean([])); //true because it an object not null or undefined
+   console.log(Boolean({})); //true same it has an object not null or undefined
+   
+
+
+// SECTION 2 – Flow Control Tasks
+//TASK 5 – Even or Odd
+
+let num = 7
+
+if(num===7){
+    console.log(num+" is Odd");
+}else{
+    console.log(num+" is Even");
+    
+}
+
+
+
+// TASK 6 – Grade System
+
+let marks = 75;
+
+if(marks>=90){
+    console.log("A");
+
+}else if(marks>=75){
+    console.log("B");
+
+}else if(marks>50){
+    console.log("c");
+    
+}else{
+    console.log("Fail");
+    
+}
+
+
+
+// TASK 7 – Switch Day Finder
+
+let dayNumber = 3;
+let dayname;
+
+switch(dayNumber) {
+    case 1:
+        dayName = "Monday"
+        break;
+    case 2:
+        dayName = "Tuesday"
+        break;
+    case 3:
+        dayName = "Wednesday"
+        break;
+    case 4:
+        dayName = "Thursday"
+        break;
+    case 5:
+        dayName = "Friday"
+        break;
+    case 6:
+        dayName = "Saturday"
+        break;
+    case 7:
+        dayName = "Sunday"
+        break;
+    default:
+        dayName = "Invalid day number"
+}
+
+console.log(dayName)
+
+
+   
+// SECTION 3 – Loop Tasks
+// TASK 8 – Reverse Counting
+
+ for(i=5; i>=1; i--){
+
+    console.log(i);
+ }
+
+
+
+// TASK 9 – Multiplication Table
+//Printing table of 3:
+
+let number= 3;
+
+for(i=1; i<=10;i++){
+
+    console.log(number+" X "+ i +" = "+ number*i );
+    
+}
+
+
+
+// TASK 10 – Sum of First 10 Numbers
+//Using for loop calculate:
+
+let sum = 0;
+
+ for(i=1; i<=10; i++){
+
+       sum = sum+i
+    
+ }
+   
+    console.log(sum);
+    
+   
+
+// BONUS – Mentor Level
+
+if("0"){
+console.log("true block");
+}else{
+console.log("false block");
+}
+
+
+// Here the output will be "true block" because it is inside the double quots so it will be consider as a boolean value true 
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions&Loops</title>
+</head>
+<body>
+
+
+    <script>
+
+//LEVEL 1 – Loop Practice
+//Task 1 – for...of (String)
+
+// Print each character using for...of
+
+    let word = "developer"
+
+    for(let char of word){
+
+        console.log(char);
+    }
+
+// Count how many letters are there
+
+    let count = 0;
+    for (let char of word) {
+    count++;
+}
+
+// Printing only vowels
+
+    console.log("Vowels:");
+    let vowels = "aeiou";
+
+    for (let char of word) {
+    if (vowels.includes(char)) {
+        console.log(char);
+    }
+}
+
+
+
+//Task 2 – for...of (Array)
+
+
+    let skills = ["HTML", "CSS", "JavaScript", "React"];
+
+    // Print all skills
+    console.log("All Skills:");
+    for (let skill of skills) {
+    console.log(skill);
+    }
+
+    // Print skill with message
+    console.log("Skills with message:");
+    for (let skill of skills) {
+    console.log("I know " + skill);
+    }
+
+    // Count total skills
+    let countSkills = 0;
+    for (let skill of skills) {
+    countSkills++;
+    }
+    console.log("Total Skills:", count);
+
+
+
+// Task 3 – for...in (Object)
+ 
+    let employee = {
+    name: "Arun",
+    role: "Tester",
+    salary: 30000,
+    experience: "2 years"
+    }
+
+//printing all keys
+
+    for(let key in employee){
+
+        console.log(key);
+        
+    }
+
+//Printing all values
+
+      for(let value in employee){
+
+        console.log(employee[value]);
+        
+    }
+
+//Printing: name : Arun
+
+    for (let key in employee) {
+    if (key === "name") {
+        console.log(key + " : " + employee[key]);
+    }
+}
+
+
+
+//LEVEL 2 – Function Practice
+//Task 4 – Simple Function
+
+
+    function table(num) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(num + " x " + i + " = " + (num * i));
+    }
+}
+    table(5);
+
+
+// Task 5 – Return Keyword
+
+    function square(num) {
+    return num * num;
+}
+
+    let result = square(5);
+
+    console.log(result);
+
+
+
+// Task 6 – Default Parameter
+
+    function register (name, department, role="Developer"){
+
+    console.log("Name:", name);
+    console.log("Department:", department);
+    console.log("Role:", role);
+
+    }
+
+    register("Balaji", "IT", "Tester");
+
+    register("Kishore","CSE")
+
+
+//LEVEL 3 – Scope + Hoisting
+// Task 7 – Scope Prediction
+
+    function checkScope(){
+
+    if(true){
+    var a = 100
+    let b = 200
+    }
+    console.log(a)
+    console.log(b)
+    }
+
+    // The output will be
+    // 100
+    // ReferenceError: b is not defined
+    // because let is a local scope so it will be executed or working only within the block
+
+
+
+// Task 8 – Hoisting
+
+    console.log(x)
+    var x = 10;
+
+    // The output will be "undefined" we can print the value x it will be hoisted but the values will be undefined
+
+    // console.log(y)
+    // let y = 20;
+
+    // The output will be ReferenceError: Cannot access 'y' before initialization 
+
+
+
+// LEVEL 4 – Function Types
+// Task 9 – Named Function
+
+    function greet(name){
+
+        console.log("Welcome "+name);
+
+    }
+
+    greet("Balaji");
+        
+        
+
+// Task 10 – Anonymous Function
+
+    let add = function(a, b) {
+    return a + b;
+    };
+
+    let output = add(5, 5);
+
+    console.log(result);
+
+
+
+// Task 11 – Arrow Function
+
+    let subtract = (a, b) => {
+    return a - b;
+    };
+
+    let ans = subtract(10, 4);
+
+    console.log(result);
+
+
+
+//LEVEL 5 – Callback & Higher Order
+// Task 12 – Callback
+
+    function addition(a, b) {
+    return a + b;
+    }
+
+    function subtraction(a, b) {
+    return a - b;
+    }
+
+    function calculate(operation, a, b) {
+    let result = operation(a, b);
+    console.log(result);
+    }
+
+    calculate(addition, 10, 5);
+    calculate(subtraction, 20, 10);
+
+
+// LEVEL 6 – Currying
+// Task 13
+
+    function total(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+
+    let sum = total(5)(10)(15);
+
+    console.log(sum);
+
+
+
+// LEVEL 7 – Generator
+//Task 14 – Reward Generator
+
+    
+function* reward() {
+    yield "Level 1 Completed";
+    yield "Level 2 Completed";
+    yield "Level 3 Completed";
+    yield "Team Winner";
+}
+
+    let game = reward();
+
+console.log(game.next().value);
+console.log(game.next().value);
+console.log(game.next().value);
+console.log(game.next().value);
+
+
+   let game2 = reward();
+
+for (let message of game2) {
+    console.log(message);
+}
+
+
+
+//FINAL TEAM CHALLENGE
+// Building small system using ONLY above concepts:
+
+   // Object - team details
+let team = {
+    name: "Warriors",
+    members: 5,
+    department: "Engineering",
+    score: 80
+};
+
+// for...in - print details
+console.log("Team Details:");
+for (let key in team) {
+    console.log(key + " : " + team[key]);
+}
+
+console.log("-------------------");
+
+//  Generator - rewards
+function* rewardGenerator() {
+    yield "Level 1 Completed";
+    yield "Level 2 Completed";
+    yield "Level 3 Completed";
+    yield "Team Winner";
+}
+
+console.log("Rewards:");
+for (let reward of rewardGenerator()) {
+    console.log(reward);
+}
+
+console.log("-------------------");
+
+// Callback - score calculation
+function addScore(score, bonus) {
+    return score + bonus;
+}
+
+function calculateScore(callback, score, bonus) {
+    let total = callback(score, bonus);
+    console.log("Total Score:", total);
+    return total;
+}
+
+let newScore = calculateScore(addScore, team.score, 20);
+
+console.log("-------------------");
+
+// Default parameter 
+function registerTeam(name, role = "Developer") {
+    console.log("Registered:", name, "| Role:", role);
+}
+
+registerTeam("Arun", "Tester");
+registerTeam("Balaji");
+
+console.log("-------------------");
+
+// Currying for bonus calculation
+function bonus(a) {
+    return function(b) {
+        return function(c) {
+            return a + b + c;
+        };
+    };
+}
+
+let bonusPoints = bonus(5)(10)(15);
+console.log("Bonus Points:", bonusPoints);
+
+console.log("-------------------");
+
+// Arrow function - final score
+let finalScore = (score, bonus) => score + bonus;
+
+console.log("Final Score:", finalScore(newScore, bonusPoints));
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

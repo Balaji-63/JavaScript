@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+//JavaScript Intermediate Real-Time Task Assignment
+// 1 Employee Data Merge System
+
+    let teamA = [
+    { name: "John", role: "Developer" },
+    { name: "Arun", role: "Tester" }
+    ];
+
+    let teamB = [
+    { name: "Naveen", role: "Designer" },
+    { name: "David", role: "Manager" }
+    ];
+
+// Merging both teams using spread operator
+
+   let mergeTeam = [...teamA,teamB]
+   console.log(mergeTeam);
+   
+//Adding one new employee manually
+   
+   mergeTeam.push({name:"Balaji",role:"support"})
+   console.log(mergeTeam);
+   
+// Cloneing the final array into backupTeam
+   
+   let backupTeam = [...mergeTeam];
+   console.log("Backup Team:", backupTeam);
+
+// Remove last employee
+
+   mergeTeam.pop();
+   console.log("After removing last employee:", mergeTeam);
+
+// Add new employee at first position
+
+    mergeTeam.unshift({ name: "Rahul", role: "Team Lead" });
+    console.log("After adding employee at first:", mergeTeam);
+
+
+
+// 2 Salary Management (Object Spread)
+
+    let emp1 = { name: "John", salary: 30000 };
+    let emp2 = { name: "John", salary: 45000 };
+
+// Mergeing both objects
+
+    let mergedEmp = { ...emp1, ...emp2 };
+    console.log("Merged:", mergedEmp);
+
+// Updating salary to 50000
+
+   mergedEmp.salary = 50000;
+   console.log("Updated Salary:", mergedEmp); 
+
+// Cloneing into new object
+
+   let clonedEmp = { ...mergedEmp };
+   console.log("Cloned Object:", clonedEmp);
+
+// Destructure name and salary
+
+   let { name, salary } = clonedEmp;
+
+// Print result
+
+   console.log(`${name} earns ${salary}`);
+
+
+// 3 Product Cart System
+
+  let cart = ["Laptop", "Phone", "Tablet", "Watch"];
+
+// Remove last product
+
+   cart.pop();
+   console.log("After removing last product:", cart);
+
+// Add two products at end
+
+   cart.push("Camera", "Headphones");
+   console.log("After adding two products at end:", cart);
+
+// Add one product at beginning
+
+   cart.unshift("Speaker");
+   console.log("After adding product at beginning:", cart);
+
+// Remove first product
+
+   cart.shift();
+   console.log("After removing first product:", cart);
+
+// Replace "Tablet" with "Camera" using splice
+
+   cart.splice(cart.indexOf("Tablet"), 1, "Camera");
+   console.log(cart);
+
+// Check if "Phone" exists'
+
+   let phoneExists = cart.includes("Phone");
+   console.log("Does Phone exist?", phoneExists);
+
+// Find index of "Watch"
+
+   let watchIndex = cart.indexOf("Watch");
+   console.log("Index of Watch:", watchIndex);
+
+
+
+// 4 Student Marks Analyzer
+
+let marks = [78, 90, 66, 84, 99, 45];
+
+// Sorting marks (correct way using compare function)
+
+   marks.sort((a, b) => a - b);
+   console.log("Sorted Marks Ass:", marks);
+
+// Reverse sorted marks
+
+   marks.reverse();
+   console.log("Sorted Marks Dec:", marks);
+
+// Slice top 3 marks
+
+   let top3 = marks.slice(0, 3);
+   console.log("Top 3 Marks:", top3);
+
+// Find index of 84
+
+   let index84 = marks.indexOf(84);
+   console.log("Index of 84:", index84);
+
+// Replace 45 with 50 using splice'
+ 
+   marks.splice(marks.indexOf(45), 1, 50);
+   console.log("After replacing :", marks);
+
+
+
+// 5 Nested Data Extractor
+
+   let company = [
+        "Stackly",
+       ["Frontend", ["HTML", "CSS", ["JavaScript"]]]
+       ];
+
+// Extract "JavaScript" normally
+
+   let jsNormal = company[1][1][2][0];
+   console.log("JavaScript (normal):", jsNormal);
+
+// Extract using destructuring
+
+   let [
+   companyName,
+   [dept, [html, css, [jsDestructured]]]
+   ] = company;
+
+   console.log("JavaScript (destructuring):", jsDestructured);
+
+// Flatten entire array
+
+   let flatArray = company.flat(Infinity);
+   console.log("Flattened Array:", flatArray);
+
+// Replace "CSS" with "Tailwind"
+
+   company[1][1][1] = "Tailwind";
+   console.log("After replacing :", company);
+
+
+
+
+// 6 Attendance System (Rest Operator)
+
+   function attendance(day, ...students) {
+
+// Printing day
+
+    console.log("Day:", day);
+
+// Print total students count
+
+   console.log("Total Students:", students.length);
+
+// Print first student
+
+   console.log("First Student:", students[0]);
+
+// Print last student
+
+   console.log("Last Student:", students[students.length - 1]);
+
+// Return all students array
+
+   function attendance(day, ...students) {
+   console.log(day);
+   return students; 
+   }
+
+   }
+
+   attendance("Monday", "John", "Arun", "David", "Naveen");
+
+
+
+// 7  Inventory Management
+
+  let stock = [10, 20, 30, 40, 50];
+
+// Fill last two values with 0
+
+   stock.fill(0, stock.length - 2, stock.length);
+   console.log("After filling last two with 0:", stock);
+
+// Add 60 and 70 at end
+
+   stock.push(60, 70);
+   console.log("After adding 60 and 70:", stock);
+
+// Remove first value
+
+   stock.shift();
+   console.log("After removing first value:", stock);
+
+// Find if 30 exists
+
+    let exists = stock.includes(30);
+    console.log("Does 30 exist?", exists);
+
+// Get last index of 20
+
+   let lastIndex = stock.lastIndexOf(20);
+   console.log("Last index of 20:", lastIndex);
+
+// Reverse the stock
+
+   stock.reverse();
+   console.log("Reversed Stock:", stock)
+
+
+
+// 8 User Profile System
+
+   let username = {
+   name: "Naveen",
+   role: "Developer",
+   skills: ["HTML", "CSS", "JavaScript"]
+   };
+
+// Destructure name and role
+
+   let { name, role } = username;
+   console.log("Name:", name);
+   console.log("Role:", role);
+
+// Add one new skill using spread
+
+   username.skills = [...username.skills, "React"];
+   console.log("After adding new skill:", username.skills);
+
+// Clone entire user object
+
+   let clonedUser = { ...username };
+   console.log("Cloned User:", clonedUser);
+
+//  Merge with new object { experience: "2 Years" }
+
+   let updatedUser = { ...clonedUser, experience: "2 Years" };
+   console.log("Updated User:", updatedUser);
+
+// Print skills length
+
+   console.log("Skills Length:", updatedUser.skills.length);
+
+
+
+// 9 Sales Report
+
+  let sales = [12000, 45000, 22000, 8000, 15000];
+
+// Sort ascending
+ 
+   sales.sort((a, b) => a - b);
+   console.log("Ascending Order:", sales);
+
+// Sort descending
+
+   sales.sort((a, b) => b - a);
+   console.log("Descending Order:", sales);
+
+// Slice middle 3 sales
+
+   let middleSales = sales.slice(1, 4);
+   console.log("Middle 3 Sales:", middleSales);
+
+// Replace lowest sale with 10000
+
+   let lowestIndex = sales.indexOf(Math.min(...sales));
+   sales.splice(lowestIndex, 1, 10000);
+   console.log("After replacing lowest sale:", sales);
+
+// Check if 50000 exists
+
+   let exists = sales.includes(50000);
+   console.log("Does 50000 exist?", exists);
+
+
+
+// ■ Data Cleaning System
+
+   let rawData = [1, 2, null, 4, undefined, 6, [7, 8], { a: 10 }];
+
+//  Print last element using length
+
+   let lastElement = rawData[rawData.length - 1];
+   console.log("Last Element:", lastElement);
+
+// Flatten array
+
+   let flattened = rawData.flat(Infinity);
+   console.log("Flattened Array:", flattened);
+
+// Remove last element
+
+   flattened.pop();
+   console.log("After removing last element:", flattened);
+
+// Add 100 at end
+
+   flattened.push(100);
+   console.log("After adding 100:", flattened);
+
+// Clone cleaned array
+
+   let cleanedArray = [...flattened];
+   console.log("Cloned Cleaned Array:", cleanedArray);
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array&String</title>
+</head>
+<body>
+
+
+    <script>
+
+//LEVEL 1 – Array Methods Tasks
+//Task 1 – forEach()
+
+   let names = ["Arun", "Bala", "Charan", "David"];
+
+   names.forEach((name, index) => {
+   console.log(name);
+   });
+
+
+
+// Task 2 – map()
+
+   let numbers = [2, 4, 6, 8];
+
+   let squares = numbers.map(num => num * num);
+
+   console.log(squares);
+
+
+
+// Task 3 – filter()
+
+   let products = [
+    { name: "Mobile", price: 15000 },
+    { name: "Laptop", price: 60000 },
+    { name: "Keyboard", price: 1000 },
+    { name: "Monitor", price: 12000 }
+   ];
+
+   let expensiveProducts = products.filter(product => product.price > 10000);
+
+   console.log(expensiveProducts);
+   
+
+
+// Task 4 – find()
+
+   
+   let firstExpensiveProduct = products.find(product => product.price > 10000);
+
+   console.log(firstExpensiveProduct);
+
+
+
+// Task 5 – reduce()
+
+   let marks = [80, 75, 90, 60];
+
+   let total = marks.reduce((sum, mark) => sum + mark, 0);
+   let average = total / marks.length;
+
+   console.log("Total:", total);
+   console.log("Average:", average);
+
+
+
+// Task 6 – some()
+
+   let ages = [12, 15, 17, 22];
+
+   let result = ages.some(age => age > 18);
+
+   console.log(result);
+
+
+
+// Task 7 – every()
+
+   let scores= [60, 70, 80, 90]
+
+   let allPassed = scores.every(score => score >= 35);
+
+   console.log(allPassed);
+
+
+
+// Task 8 – sort() 
+
+   let prices = [200, 40, 1000, 5, 75];
+
+   let ascending = [...prices].sort((a, b) => a - b);
+   let descending = [...prices].sort((a, b) => b - a);
+
+   console.log("Ascending:", ascending);
+   console.log("Descending:", descending);
+
+
+
+// LEVEL 2 – String Method Tasks
+//Task 9 – Capitalize First Letter
+
+   let name = "naveen";
+
+   let output = name.slice(0, 1).toUpperCase() + name.slice(1);
+
+   console.log(result);
+
+
+
+// Task 10 – Count Letter
+
+   let text = "javascript";
+
+   let count = text.split("a").length - 1;
+
+   console.log(count);
+
+
+
+// Task 11 – Clean Input
+
+   let input = " Hello World ";
+
+   let cleaned = input.trim().toUpperCase();
+
+   console.log(cleaned);
+
+
+
+// Task 12 – Replace & Check
+
+   let sentence = "I love python";
+
+   let newSentence = sentence.replace("python", "javascript");
+
+   console.log(newSentence);
+
+   console.log(newSentence.startsWith("I"));
+
+   console.log(newSentence.endsWith("javascript"));
+
+
+
+// BONUS – Real World Challenge (Employee Salary System)
+
+   // Employees array
+let employees = [
+    { name: "A", salary: 25000 },
+    { name: "B", salary: 40000 },
+    { name: "C", salary: 15000 },
+    { name: "D", salary: 60000 }
+];
+
+// Get employees salary > 30000
+let highSalaryEmployees = employees.filter(emp => emp.salary > 30000);
+console.log("Employees with salary > 30000:", highSalaryEmployees);
+
+// Find first employee salary > 30000
+let firstHighSalary = employees.find(emp => emp.salary > 30000);
+console.log("First employee salary > 30000:", firstHighSalary);
+
+// Calculate total salary
+let totalSalary = employees.reduce((sum, emp) => sum + emp.salary, 0);
+console.log("Total Salary:", totalSalary);
+
+// Check if any employee salary < 20000
+let anyLowSalary = employees.some(emp => emp.salary < 20000);
+console.log("Any salary < 20000:", anyLowSalary);
+
+// Check if all employees salary > 10000
+let allAbove10000 = employees.every(emp => emp.salary > 10000);
+console.log("All salary > 10000:", allAbove10000);
+
+
+
+
+    </script>
+    
+</body>
+</html>

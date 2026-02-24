@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+
+    <h1> Product Dashboard</h1>
+
+    <h3 id="count"></h3>
+    <div id="products"></div>
+
+    <script>
+
+        const message = document.getElementById("message");
+        const container = document.getElementById("products");
+        const countText = document.getElementById("count");
+
+        fetch("https://fakestoreapi.com/products")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("API Error");
+                }
+                return response.json();
+            })
+            .then(products => {
+
+
+                // Sorting
+                products.sort((a, b) => a.price - b.price);
+
+                // count
+                countText.textContent = "Total Products: " + products.length;
+
+                // products
+                products.forEach(product => {
+
+                    const card = document.createElement("div");
+
+                    card.innerHTML = `
+                        <h3>${product.title}</h3>
+                        <img src="${product.image}" width="120">
+                        <p><strong>Price:</strong> ₹${product.price}</p>
+                        <hr>
+                    `;
+
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => {
+                message.textContent = "Failed to load products. Please try again.";
+            });
+
+    </script>
+
+</body>
+</html>

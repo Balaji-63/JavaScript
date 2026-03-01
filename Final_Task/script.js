@@ -1,4 +1,4 @@
-// DOM Elements
+
 const productContainer = document.getElementById("productContainer");
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
@@ -93,4 +93,5 @@ categoryFilter.addEventListener("change", function () {
 
     renderProducts(filtered);
   }
+
 });
